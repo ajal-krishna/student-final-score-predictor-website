@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Final Marks Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-sun sun-icon"></i>
+        <label class="switch">
+            <input type="checkbox" id="themeSwitch" checked>
+            <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon moon-icon"></i>
+    </div>
+
+    <div class="main-container">
+        <div class="content-grid">
+            <!-- Left: Form -->
+            <div class="form-panel">
+                <h1>Student Final Marks Predictor</h1>
+                <form method="POST">
+                    <label for="attendance">Attendance (%):</label>
+                    <input type="number" id="attendance" name="attendance" min="0" max="100" step="1" required>
+
+                    <label for="test1">Internal Test 1 (out of 40):</label>
+                    <input type="number" id="test1" name="test1" min="0" max="40" step="0.5" required>
+
+                    <label for="test2">Internal Test 2 (out of 40):</label>
+                    <input type="number" id="test2" name="test2" min="0" max="40" step="0.5" required>
+
+                    <label for="assignment">Assignment Score (out of 10):</label>
+                    <input type="number" id="assignment" name="assignment" min="0" max="10" step="0.5" required>
+
+                    <label for="study_hours">Daily Study Hours:</label>
+                    <input type="number" id="study_hours" name="study_hours" min="0" max="10" step="0.5" required>
+
+                    <button type="submit">Predict</button>
+                </form>
+            </div>
+
+            <!-- Right: Result + Input Summary -->
+            {% if prediction %}
+            <div class="result-panel">
+                <div class="result-content">
+                    <div class="score-circle">
+                        <span>{{ prediction }}</span>
+                        <small>/ 100</small>
+                    </div>
+                    <p class="message">{{ message }}</p>
+
+                    <!-- Display the submitted input values -->
+                    <div class="input-summary" style="margin-top: 32px; text-align: left; font-size: 1.05rem; color: #cbd5e1;">
+                        <p><strong>Attendance:</strong> {{ attendance }} %</p>
+                        <p><strong>Internal Test 1:</strong> {{ test1 }} / 40</p>
+                        <p><strong>Internal Test 2:</strong> {{ test2 }} / 40</p>
+                        <p><strong>Assignment:</strong> {{ assignment }} / 10</p>
+                        <p><strong>Daily Study Hours:</strong> {{ study_hours }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Theme Switch JavaScript -->
+    <script>
+        const toggle = document.getElementById('themeSwitch');
+        const html = document.documentElement;
+
+        // Load saved theme or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        toggle.checked = (savedTheme === 'dark');
+
+        // Listen for toggle changes
+        toggle.addEventListener('change', () => {
+            const newTheme = toggle.checked ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+
+</body>
+</html>
