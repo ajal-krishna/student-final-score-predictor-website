@@ -73,7 +73,6 @@ The trained **Linear Regression model** is integrated into a **professional web 
 ---
 
 ## 📁 Project Structure
-
 student-final-score-predictor-website/
 │
 ├── app.py
@@ -128,3 +127,4 @@ Ajal Krishna
 B.Tech Computer Science
 
 Machine Learning Project
+
