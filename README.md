@@ -1,130 +1,160 @@
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
 # 🎓 Student Final Score Predictor
 
-A Machine Learning–based web application that predicts a student’s **final exam score** using academic performance and study behavior data.  
-The project uses **Linear Regression** and is deployed as a **Flask web application**.
+A **Flask web application** that uses **Linear Regression** to predict a student's **final exam score (out of 100)** based on attendance, internal tests, assignment score, and daily study hours.
+
+https://github.com/ajalkrishna/student-final-score-predictor-website
 
 ---
 
-## 📌 Project Overview
+## ✨ Features
 
-Predicting student performance helps educators identify learning gaps early and provide proper academic guidance.  
-This project predicts **final exam score (out of 100)** based on:
-
-- Attendance percentage  
-- Internal Test 1 score  
-- Internal Test 2 score  
-- Assignment score  
-- Daily study hours  
-
-The trained **Linear Regression model** is integrated into a **professional web interface** where users can input values and instantly get predictions.
-
----
-
-## 🧠 Machine Learning Details
-
-- **Problem Type**: Supervised Regression  
-- **Model Used**: Linear Regression  
-- **Why Linear Regression was chosen**:
-  - Simple and interpretable  
-  - Works well for structured academic data  
-  - Easy to justify and explain in viva  
+- Real-time final score prediction
+- Clean and modern neumorphic UI with **dark/light mode toggle**
+- Shows predicted score + performance category (Excellent / Good / Needs Improvement)
+- Displays all entered input values in the result section
+- Responsive design (works well on mobile & desktop)
 
 ---
 
 ## 📊 Input Features
 
-| Feature | Description |
-|------|------------|
-| Attendance (%) | Student attendance percentage |
-| Internal Test 1 | Score out of 40 |
-| Internal Test 2 | Score out of 40 |
-| Assignment Score | Score out of 10 |
-| Daily Study Hours | Average hours studied per day |
+| Feature                     | Description                        | Range          |
+|-----------------------------|------------------------------------|----------------|
+| Attendance (%)              | Percentage of classes attended     | 0 – 100        |
+| Internal Test 1             | Score in first internal exam       | 0 – 40         |
+| Internal Test 2             | Score in second internal exam      | 0 – 40         |
+| Assignment Score            | Score for submitted assignments    | 0 – 10         |
+| Daily Study Hours           | Average hours studied per day      | 0 – 10+        |
+
+**Output**: Predicted final score (rounded to 1 decimal) + motivational message
 
 ---
 
-## 🎯 Output
+## 🖼️ Screenshots
 
-- **Predicted Final Exam Score (out of 100)**
-- Performance category:
-  - 🌟 Excellent  
-  - 👍 Good  
-  - ⚠️ Needs Improvement  
+### Home Page – Input Form
+
+<p align="center">
+  <img src="images/home_page_L.png" alt="Light Mode" width="45%"/>
+  <img src="images/home_page_D.png" alt="Dark Mode" width="45%"/>
+</p>
+
+### Prediction Results
+
+<p align="center">
+  <img src="images/excellent_result.png" alt="Excellent Result" width="45%"/>
+  <img src="images/improvement_result.png" alt="Needs Improvement" width="45%"/>
+</p>
 
 ---
 
-## 🛠️ Tech Stack Used
+## 🛠️ Tech Stack
 
 ### Machine Learning
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- joblib (model saving/loading)
 
 ### Web Development
-- Flask (Backend)  
-- HTML & CSS (Frontend)  
+- Flask (Backend)
+- HTML5 + CSS3 (Frontend)
+- Font Awesome (icons)
 
-### Tools
-- Google Colab (Model training)  
-- VS Code (Development)  
-- GitHub (Version control)  
+### Development Tools
+- Google Colab (model training)
+- Visual Studio Code (development)
+- Git & GitHub (version control)
 
 ---
 
 ## 📁 Project Structure
 student-final-score-predictor-website/
 │
-├── app.py
-├── linear_regression_model.pkl
-├── requirements.txt
-├── README.md
+├── app.py                        # Flask application
+├── linear_regression_model.pkl   # Trained Linear Regression model
+├── requirements.txt              # Python dependencies
+├── README.md                     # This file
 ├── .gitignore
 │
 ├── templates/
-│ └── index.html
+│   └── index.html                # Main HTML template
 │
-├── static/
-│ └── style.css
+└── static/
+└── style.css                 # Neumorphic + dark/light theme styles
 │
 └── images/
-├── home_page_L.png
-├── home_page_D.png
-├── excellent_result.png
-└── improvement_result.png
+├── home_page_L.png           # Light mode home page
+├── home_page_D.png           # Dark mode home page
+├── excellent_result.png      # Excellent performance result
+└── improvement_result.png    # Needs improvement result
 
 ---
 
-## 🖼️ Application Screenshots
+## 🚀 How to Run Locally
 
-### 🔹 Home Page – Input Form
-This page allows users to enter academic and study-related details.
+### 1. Clone the repository
 
-![Home Page](images/home_page_L.png)
-![Home Page](images/home_page_D.png)
+```bash
+git clone https://github.com/ajalkrishna/student-final-score-predictor-website.git
+cd student-final-score-predictor-website
 
----
+2. Create virtual environment & install dependencies
 
-### 🔹 Prediction Result – Excellent Performance
-This screen shows the prediction output when the model predicts a high final score
-with an **Excellent** performance message.
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-![Excellent Result](images/excellent_result.png)
+# Linux / macOS
+python3 -m venv venv
+source venv/bin/activate
 
----
+pip install -r requirements.txt
 
-### 🔹 Prediction Result – Needs Improvement
-This screen shows the prediction output when the model predicts a lower final score
-with a **Needs Improvement** message.
+3. Run the application
 
-![Needs Improvement Result](images/improvement_result.png)
+python app.py
 
+Open your browser and go to:
+http://127.0.0.1:5000
+
+📦 Requirements
+
+flask==3.0.3
+joblib==1.4.2
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+
+(You can generate your own with pip freeze > requirements.txt)
+
+📈 Model Performance
+Model: Linear Regression
+Training: Performed in Google Colab
+Features used: All 5 input variables
+
+🙌 Acknowledgments
+Inspired by academic performance prediction projects
+Thanks to the open-source community for Flask & scikit-learn
 
 👨‍💻 Author
-
 Ajal Krishna
 B.Tech Computer Science
+Machine Learning Enthusiast
+Feel free to ⭐ the repo if you like it!
+Made with ❤️ in Kerala, India
 
-Machine Learning Project
+### Tips for best GitHub look
+
+1. Make sure all images (`home_page_L.png`, etc.) are actually placed in the `images/` folder in your repository.
+2. Use **raw.githubusercontent.com** links if images don’t load properly (optional):
+
+   ```markdown
+   <img src="https://raw.githubusercontent.com/ajalkrishna/student-final-score-predictor-website/main/images/home_page_L.png" ... />
 
 
