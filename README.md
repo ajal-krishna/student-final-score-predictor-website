@@ -89,7 +89,8 @@ student-final-score-predictor-website/
 │ └── style.css
 │
 └── images/
-├── home_page.png
+├── home_page_L.png
+├── home_page_D.png
 ├── excellent_result.png
 └── improvement_result.png
 
@@ -125,4 +126,5 @@ with a **Needs Improvement** message.
 
 Ajal Krishna
 B.Tech Computer Science
+
 Machine Learning Project
