@@ -93,7 +93,6 @@ student-final-score-predictor-website/
 ├── excellent_result.png
 └── improvement_result.png
 
-
 ---
 
 ## 🖼️ Application Screenshots
@@ -127,4 +126,5 @@ Ajal Krishna
 B.Tech Computer Science
 
 Machine Learning Project
+
 
