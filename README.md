@@ -126,15 +126,20 @@ Features used: All 5 input variables
 🙌 Acknowledgments
 
 Inspired by academic performance prediction systems
+
 Thanks to Flask & Scikit-learn open-source communities
+
 
 👨‍💻 Author
 
 Ajal Krishna
+
 B.Tech Computer Science
+
 Machine Learning Enthusiast
 
 📍 Kerala, India
+
 ⭐ If you like this project, give it a star!
 
 
