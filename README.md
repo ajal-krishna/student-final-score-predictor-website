@@ -120,14 +120,19 @@ scikit-learn==1.5.1
 📈 Model Performance
 
 Model: Linear Regression
+
 Training: Performed in Google Colab
+
 Features used: All 5 input variables
+
+
 
 🙌 Acknowledgments
 
 Inspired by academic performance prediction systems
 
 Thanks to Flask & Scikit-learn open-source communities
+
 
 
 👨‍💻 Author
