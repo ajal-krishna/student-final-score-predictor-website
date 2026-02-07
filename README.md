@@ -82,49 +82,51 @@ https://github.com/ajalkrishna/student-final-score-predictor-website
 ## 🚀 How to Run Locally
 
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/ajalkrishna/student-final-score-predictor-website.git
 cd student-final-score-predictor-website
+```
 
 2. Create virtual environment & install dependencies
-# Windows
+```bash
+**# Windows
 python -m venv venv
 venv\Scripts\activate
-
+```
+```bash
 # Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
-
+```
+```bash
 pip install -r requirements.txt
-
+```
 3. Run the application
+```bash
 python app.py
-
+```
 Open your browser and go to:
+```bash
 http://127.0.0.1:5000
-
+```
 📦 Requirements
+```bash
 flask==3.0.3
 joblib==1.4.2
 numpy==1.26.4
 pandas==2.2.2
 scikit-learn==1.5.1
-
+```
 📈 Model Performance
-
 Model: Linear Regression
 Training: Performed in Google Colab
 Features used: All 5 input variables
 
 🙌 Acknowledgments
-
 Inspired by academic performance prediction systems
-
 Thanks to Flask & Scikit-learn open-source communities
 
 👨‍💻 Author
-
 Ajal Krishna
 B.Tech Computer Science
 Machine Learning Enthusiast
