@@ -74,8 +74,27 @@ https://github.com/ajalkrishna/student-final-score-predictor-website
 ---
 
 ## 📁 Project Structure
-
-
+```bash
+student-final-score-predictor-website/
+│
+├── app.py
+├── linear_regression_model.pkl
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── style.css
+│
+└── images/
+    ├── home_page_L.png
+    ├── home_page_D.png
+    ├── excellent_result.png
+    └── improvement_result.png
+```
 
 ---
 
