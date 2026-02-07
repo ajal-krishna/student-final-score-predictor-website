@@ -89,7 +89,7 @@ cd student-final-score-predictor-website
 
 2. Create virtual environment & install dependencies
 ```bash
-**# Windows
+# Windows
 python -m venv venv
 venv\Scripts\activate
 ```
