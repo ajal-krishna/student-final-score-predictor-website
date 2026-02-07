@@ -118,15 +118,18 @@ pandas==2.2.2
 scikit-learn==1.5.1
 ```
 📈 Model Performance
+
 Model: Linear Regression
 Training: Performed in Google Colab
 Features used: All 5 input variables
 
 🙌 Acknowledgments
+
 Inspired by academic performance prediction systems
 Thanks to Flask & Scikit-learn open-source communities
 
 👨‍💻 Author
+
 Ajal Krishna
 B.Tech Computer Science
 Machine Learning Enthusiast
